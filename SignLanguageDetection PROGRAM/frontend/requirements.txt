@@ -1,0 +1,9 @@
+Flask
+flask-cors
+numpy
+opencv-python
+mediapipe
+scikit-learn
+
+# Optional (for production):
+# gunicorn

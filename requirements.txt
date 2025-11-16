@@ -1,0 +1,10 @@
+numpy
+scikit-learn
+opencv-python
+mediapipe
+flask
+flask-cors
+
+# Optional / dev
+# gunicorn
+# pytest

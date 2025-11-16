@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign Language Detector — Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sign Language Detector</h1>
+      <p class="subtitle">A lightweight frontend for your local model. Click <strong>Translate</strong> to identify the shown sign.</p>
+    </header>
+
+    <main>
+      <section class="video-panel">
+        <div class="video-wrapper">
+          <video id="video" autoplay playsinline muted></video>
+          <canvas id="overlay"></canvas>
+          <div id="labelBadge" class="label-badge">Ready</div>
+        </div>
+
+        <div class="controls">
+          <button id="translateBtn" class="btn btn-primary">Translate</button>
+          <button id="snapBtn" class="btn">Snapshot</button>
+          <label class="switch">
+            <input type="checkbox" id="backendToggle" checked />
+            <span class="switch-label">Use Local Backend</span>
+          </label>
+        </div>
+
+        <div class="result">
+          <h2>Detected</h2>
+          <div id="resultText" class="result-text">—</div>
+        </div>
+      </section>
+
+      <aside class="info">
+        <h3>Notes</h3>
+        <ul>
+          <li>Frontend runs in your browser (Live Server). It can optionally call a local Python server to perform predictions.</li>
+          <li>If you want predictions, run the Flask server provided in <code>frontend/server.py</code> — instructions in the frontend README.</li>
+          <li>Use the toggle <em>Use Local Backend</em> to switch between demo (no backend) and calling the server at <code>http://127.0.0.1:5000/predict</code>.</li>
+        </ul>
+        <p class="small">This frontend lives in the <code>frontend/</code> folder and won't change your working Python scripts.</p>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Press <strong>Translate</strong> to send the current frame to the server, or run in demo mode locally.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
